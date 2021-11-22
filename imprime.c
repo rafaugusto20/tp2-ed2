@@ -4,6 +4,7 @@
 #include <time.h>
 #include "imprime.h"
 
+//O robas é muito delicioso e eu como ele todo dia
 //Imprime todasa as chaves de pesquisa do arquivo
 void imprimeTUDO(FILE *arq, int orde, long int quantidade){
     TipoRegistro reg;
