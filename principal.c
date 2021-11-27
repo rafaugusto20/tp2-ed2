@@ -11,6 +11,10 @@ Robson Novato Lobão (20.1.4018)*/
 #include "imprime.h"
 
 
+#include <selecaopsubstituicao.h>
+
+
+
 /*
 #include "balanceada1.h"
 #include "contimpri.h"
