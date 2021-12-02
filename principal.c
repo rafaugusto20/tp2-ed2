@@ -9,19 +9,10 @@ Robson Novato Lobão (20.1.4018)*/
 #include <time.h>
 #include <math.h>
 #include "imprime.h"
-
-
-#include <selecaopsubstituicao.h>
-
-
+#include "selecaopsubstituicao.h"
 
 /*
 #include "balanceada1.h"
-#include "contimpri.h"
-#include "asi.h"
-#include "arvore_binaria.h"
-#include "arvorebestrela.h"
-
 */
 
 int main (int argc, const char *argv[]) {
@@ -89,49 +80,22 @@ int main (int argc, const char *argv[]) {
         }
     }
 
+    converter_para_binario(quantidade);
+
     FILE *arqReg = NULL;
 
     //vê qual arquivo iremos pegar
     switch (situ) {
         case 1:
-            if(quantidade != 1000000){
-                strcpy(nome,"cre_a");
-            }else{
-                quantidade = 250000;
-                if(chave <= 250000){
-                    strcpy(nome,"cre_a");
-                }else if((chave > 250000) && (chave <= 500000)){
-                    strcpy(nome,"cre_b");
-                }else if((chave > 500000) && (chave <= 750000)){
-                    strcpy(nome,"cre_c");
-                }else{
-                    strcpy(nome,"cre_d");
-                }
-            }
-
-            if((arqReg = fopen(nome, "rb")) == NULL){
+            if((arqReg = fopen("binarioASC", "rb+")) == NULL){
                 printf ("ERRO na abertura do arquivo \n");
                 return 0;
             }
             break;
 
         case 2: 
-            if(quantidade != 1000000){
-                strcpy(nome,"dec_d");
-            }else{
-                quantidade = 250000;
-                if(chave <= 250000){
-                    strcpy(nome,"dec_d");
-                }else if((chave > 250000) && (chave <= 500000)){
-                    strcpy(nome,"dec_c");
-                }else if((chave > 500000) && (chave <= 750000)){
-                    strcpy(nome,"dec_b");
-                }else{
-                    strcpy(nome,"dec_a");
-                }
-            }
 
-            if((arqReg = fopen(nome, "rb")) == NULL){
+            if((arqReg = fopen("binarioDES", "rb+")) == NULL){
                 printf ("ERRO na abertura do arquivo \n");
                 return 0;
 
@@ -139,22 +103,8 @@ int main (int argc, const char *argv[]) {
             break;
 
         case 3: 
-            if(quantidade != 1000000){
-                strcpy(nome,"ale_a");
-            }else{
-                quantidade = 250000;
-                if(chave <= 250000){
-                    strcpy(nome,"ale_a");
-                }else if((chave > 250000) && (chave <= 500000)){
-                    strcpy(nome,"ale_b");
-                }else if((chave > 500000) && (chave <= 750000)){
-                    strcpy(nome,"ale_c");
-                }else{
-                    strcpy(nome,"ale_d");
-                }
-            }
-
-            if((arqReg = fopen(nome, "rb")) == NULL){
+           
+            if((arqReg = fopen("binarioALE", "rb+")) == NULL){
                 printf ("ERRO na abertura do arquivo \n");
                 return 0;
             }

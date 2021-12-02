@@ -4,31 +4,54 @@
 #include <time.h>
 #include "imprime.h"
 
-//O robas é muito delicioso e eu como ele todo dia
-//Imprime todasa as chaves de pesquisa do arquivo
+void converter_para_binario(int quantidade){
+    Aluno reg;
+    char nome[] = "PROVAO.TXT";
+    char nome_saida[] = "binario";
 
-//cATIXA CATIZA
+    FILE *arquivo_texto = NULL;
+    arquivo_texto = fopen(nome, "r");
+    if(arquivo_texto == NULL){
+        printf("ERRO 1\n");
+        exit(1);
+    }
+
+    FILE *saida = NULL;
+    saida = fopen(nome_saida, "wb");
+    if(saida == NULL){
+        printf("ERRO 2\n");
+        exit(1);
+    }
+
+    for(int i = 0; i < quantidade; i++){
+        
+        fscanf(arquivo_texto, "%ld %f", &reg.numero, &reg.nota);
+        fgets(reg.estado, 2, arquivo_texto);
+        fgets(reg.cidade, 50, arquivo_texto);
+        fgets(reg.curso, 30, arquivo_texto);
+
+        fwrite(&reg, sizeof(Aluno), 1, saida);
+    }
+
+    fclose(arquivo_texto);
+    fclose(saida);
+
+}
+
+
+
 void imprimeTUDO(FILE *arq, int orde, long int quantidade){
-    TipoRegistro reg;
+    Aluno reg;
 
     long int contChave = 1;
 
     rewind(arq);
 
     if(orde == 0){
-        while(fscanf(arq, "%ld %lf", &reg.nInscri, &reg.nota) != EOF){
+        while(fread(&reg, sizeof (Aluno), 1, arq) == 1){
 
-            fgets(reg.estado, 2, arq);
-            fgets(reg.cidade, 50, arq);
-            fgets(reg.curso, 30, arq);
-            fgets("\n", 1, arq);
-
-            if(contChave == quantidade){
-                break;
-            }
-
-            printf("\nALUNO %d\n", contChave);
-            printf("\t Numero de Inscrição: %ld\n", reg.nInscri);
+            printf("\nALUNO %ld\n", contChave);
+            printf("\t Numero de Inscrição: %ld\n", reg.numero);
             printf("\t Nota: %.1lf\n", reg.nota);
             printf("\t Estado: %s\n", reg.estado);
             printf("\t Cidade: %s\n", reg.cidade);
@@ -39,19 +62,10 @@ void imprimeTUDO(FILE *arq, int orde, long int quantidade){
     }
 
     else {
-        while(fscanf(&reg, "%ld %lf", &reg.nInscri, &reg.nota) != EOF ){
+        while(fread(&reg, sizeof (Aluno), 1, arq) == 1){
 
-            fgets(reg.estado, 2, arq);
-            fgets(reg.cidade, 50, arq);
-            fgets(reg.curso, 30, arq);
-            fgets("\n", 1, arq);
-
-            if(contChave == quantidade){
-                break;
-            }
-
-            printf("\n%dº Lugar\n", contChave);
-            printf("\t Numero de Inscrição: %ld\n", reg.nInscri);
+            printf("\n%ldº Lugar\n", contChave);
+            printf("\t Numero de Inscrição: %ld\n", reg.numero);
             printf("\t Nota: %.1lf\n", reg.nota);
             printf("\t Estado: %s\n", reg.estado);
             printf("\t Cidade: %s\n", reg.cidade);

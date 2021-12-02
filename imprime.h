@@ -6,15 +6,23 @@
 
 typedef double TChave;
 
-typedef struct TipoRegistro{
-    long int nInscri;
-    TChave nota; //double
+typedef struct{
+    FILE* arquivo;
+    int qtdBlocos;
+    int* numReg;
+} Fita;
+
+typedef struct Aluno{
+    long int numero;
+    float nota;
     char estado[2];
     char cidade[50];
     char curso[30];
-} TipoRegistro;
+} Aluno;
 
-void imprimeRegistro(TipoRegistro registro);
+void converter_para_binario(int quantidade);
+
+void imprimeRegistro(Aluno registro);
 
 void imprimeTUDO (FILE *arg, int orde, long int quantidade);
 
