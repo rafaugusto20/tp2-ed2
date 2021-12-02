@@ -21,6 +21,8 @@ int main (int argc, const char *argv[]) {
     int situ = atoi (argv[3]);
     int argOpc = 0;
 
+    //Bom dia
+
     int contLeitura = 0; 
     int contEscrita = 0; 
     int contComp = 0;
