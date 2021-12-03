@@ -22,6 +22,8 @@ int main (int argc, const char *argv[]) {
     int argOpc = 0;
 
     //Bom dia
+    //sapoha nao funciona
+    //meu quicksort pode enfiar no cu que serve mais
 
     int contLeitura = 0; 
     int contEscrita = 0; 
