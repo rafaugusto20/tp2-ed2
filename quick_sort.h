@@ -14,6 +14,8 @@ typedef struct{
     Aluno vetor[TAMAREA];
 }TipoArea;
 
+void quick_sort(FILE **ArqLi, int quantidade){;
+
 void QuicksortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir);
 
 void LeSup(FILE **ArqLEs, Aluno *UltLido, int *Ls, short *OndeLer);

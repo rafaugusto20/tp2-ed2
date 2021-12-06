@@ -8,8 +8,10 @@ Robson Novato Lobão (20.1.4018)*/
 #include <stdlib.h>
 #include <time.h>
 #include <math.h>
+
 #include "imprime.h"
 #include "selecaopsubstituicao.h"
+#include "quick_sort.h"
 
 /*
 #include "balanceada1.h"
@@ -119,7 +121,7 @@ int main (int argc, const char *argv[]) {
     }
     
 
-    /*
+    
     //Identifica qual método de ordenação sera utilizado
     switch (metodo){
         case 1: //Acesso sequencial indexado
@@ -130,13 +132,14 @@ int main (int argc, const char *argv[]) {
             
             break;
 
-        case 3: //Árvore B
+        case 3: //QuickSort Externo
             
+            quick_sort(&arqReg, quantidade);
 
             break; 
 
     }
-    */
+    
 
     ordenado = 1;
     //Imprimindo o registro depois da ordenação

@@ -3,6 +3,34 @@
 
 #include "quick_sort.h"
 
+void quick_sort(FILE **ArqLi, int quantidade){
+
+    rewind(*ArqLi);
+
+    FILE *ArqEi = NULL,  *ArqLEs = NULL;
+    ArqEi = ArqLEs = *ArqLi;
+
+    if(ArqLEs == NULL){
+        printf("Error 2\n");
+        return 0;
+    }
+
+    if(ArqEi == NULL){
+        printf("Error 3\n");
+        return 0;
+    }
+
+    QuicksortExterno(ArqLi, &ArqEi, &ArqLEs, 1, quantidade);
+
+    fflush(*ArqLi);
+    fflush(ArqEi);
+    fflush(ArqLEs);
+
+    fclose(ArqEi);
+    fclose(ArqLEs);
+
+}
+
 
 void QuicksortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir){
     int i, j;
