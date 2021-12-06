@@ -1,5 +1,5 @@
-#ifndef QUICK_SORT_H
-#define QUICK_SORT_H
+#ifndef quick_sort_H
+#define quick_sort_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -14,7 +14,7 @@ typedef struct{
     Aluno vetor[TAMAREA];
 }TipoArea;
 
-void quick_sort(FILE **ArqLi, int quantidade){;
+void quick_sort(FILE **ArqLi, int quantidade);
 
 void QuicksortExterno(FILE **ArqLi, FILE **ArqEi, FILE **ArqLEs, int Esq, int Dir);
 

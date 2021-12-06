@@ -34,7 +34,7 @@ int main (int argc, const char *argv[]) {
     //clock_t Pesquisa;
     //clock_t FinalPesquisa;
 
-    char nome[6];
+    //char nome[6];
 
     if (quantidade <= 0){
         printf ("ERRO: o arquivo deve ter no minimo 1 registro\n");
@@ -147,7 +147,7 @@ int main (int argc, const char *argv[]) {
         imprimeTUDO(arqReg, ordenado, quantidade);
     }
 
-    tProce = (((double) Processamento)/1000.0);
+    tProce = (double)(Processamento/1000.0);
 
     tTotal = (tProce)/1000.0;
 

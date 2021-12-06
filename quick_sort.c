@@ -12,12 +12,12 @@ void quick_sort(FILE **ArqLi, int quantidade){
 
     if(ArqLEs == NULL){
         printf("Error 2\n");
-        return 0;
+        return;
     }
 
     if(ArqEi == NULL){
         printf("Error 3\n");
-        return 0;
+        return;
     }
 
     QuicksortExterno(ArqLi, &ArqEi, &ArqLEs, 1, quantidade);
